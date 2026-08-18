@@ -7,7 +7,7 @@ class StudentController extends Controller
     public function index()
     {
         $data['title'] = 'Zadkielle Opena';
-        $this->call->view('Student_Home', $data);
+        $this->call->view('student_home', $data);
     }
 
     public function profile()
@@ -22,6 +22,6 @@ class StudentController extends Controller
             'email'      => 'dazie@gmail.com'
         ];
 
-        $this->call->view('Student_Profile', $student);
+        $this->call->view('student_profile', $student);
     }
 }
