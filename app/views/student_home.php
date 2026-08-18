@@ -93,8 +93,8 @@ nav a:hover {
 </head>
 <body>
     <nav>
-        <a href="<?= site_url('/') ?>">Home</a> 
-        <a href="<?= site_url('/student') ?>">Student Profile</a>
+        <a href="<?= site_url('/student') ?>">Home</a> 
+        <a href="<?= site_url('/student/profile') ?>">Student Profile</a>
     </nav>
 
     <div class="card">
