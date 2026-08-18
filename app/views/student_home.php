@@ -2,6 +2,8 @@
 /**
  * @var string $title
  */
+
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -94,7 +96,7 @@ nav a:hover {
 <body>
     <nav>
         <a href="<?= site_url('/student') ?>">Home</a> 
-        <a href="<?= site_url('/student/profile') ?>">Student Profile</a>
+        <a href="<?= site_url('/student/authorize') ?>">Student Profile</a>
     </nav>
 
     <div class="card">

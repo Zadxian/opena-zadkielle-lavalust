@@ -7,6 +7,7 @@
  * @var string $section
  * @var string $email
  */
+$_SESSION['student_access'] = true;
 ?>
 
 <!DOCTYPE html>

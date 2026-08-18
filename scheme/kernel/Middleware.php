@@ -96,7 +96,19 @@ class Middleware
             throw new Exception("Middleware [$middleware] not registered.");
         }
 
-        return $this->map[$middleware]->handle($next);
+        $middlewareClass = $this->map[$middleware];
+        
+        // If it's a string (class name), load it using the framework's loader
+        if (is_string($middlewareClass)) {
+            // Extract class name from full namespace (e.g., "App\Middleware\StudentMiddleware" -> "StudentMiddleware")
+            $pos = strrpos($middlewareClass, '\\');
+            $className = $pos !== false ? substr($middlewareClass, $pos + 1) : $middlewareClass;
+            $instance = load_class($className, 'middlewares');
+        } else {
+            $instance = $middlewareClass;
+        }
+        
+        return $instance->handle($next);
     }
 }
 
