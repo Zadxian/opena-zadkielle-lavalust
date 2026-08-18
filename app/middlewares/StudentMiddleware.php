@@ -9,7 +9,7 @@ class StudentMiddleware extends Middleware
             return true;
         }
 
-        redirect('student');
+        redirect('/');
         exit();
     }
 }
