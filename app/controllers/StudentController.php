@@ -26,7 +26,9 @@ class StudentController extends Controller
             'course'     => 'Bachelor of Science in Information Technology',
             'year'       => '3rd Year',
             'section'    => 'F5',
-            'email'      => 'dazie@gmail.com'
+            'email'      => 'dazie@gmail.com',
+            'hobbies'   => ['taking a nap', 'painting', 'Reading'],
+            'skills'    => ['drawing', 'animation', 'design'],
         ];
 
         $this->call->view('student_profile', $student);

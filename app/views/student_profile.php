@@ -6,6 +6,8 @@
  * @var string $year
  * @var string $section
  * @var string $email
+ * @var array $hobbies
+ * @var array $skills
  */
 $_SESSION['student_access'] = true;
 ?>
@@ -113,6 +115,8 @@ $_SESSION['student_access'] = true;
         <p><strong>Year Level:</strong> <?= $year ?></p>
         <p><strong>Section:</strong> <?= $section ?></p>
         <p><strong>Email:</strong> <?= $email ?></p>
+        <p><strong>Hobbies:</strong> <?= implode(', ', $hobbies) ?></p>
+        <p><strong>Skills:</strong> <?= implode(', ', $skills) ?></p>
     </div>
 </body>
 </html>
