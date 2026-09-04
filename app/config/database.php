@@ -59,7 +59,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 
 $database['main'] = array(
     'driver'	=> '',
-    'hostname'	=> getenv('DB_HOST') ?: 'navicat://conn.mysql@local/C950907585f70346?Conn.Host=localhost&Conn.Name=users&Conn.Port=3306&Conn.UseHTTP=false&Conn.UseSSH=false&Conn.UseSSL=false&Conn.UseSocketFile=false&Conn.Username=root',
+    'hostname'	=> getenv('DB_HOST') ?: '120.0.0.1',
     'port'		=> getenv('DB_PORT') ?: '3306',
     'username'	=> getenv('DB_USERNAME') ?: 'root',
     'password'	=> getenv('DB_PASSWORD') ?: '',
