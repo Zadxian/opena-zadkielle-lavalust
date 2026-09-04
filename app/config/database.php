@@ -59,11 +59,11 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 
 $database['main'] = array(
     'driver'	=> '',
-    'hostname'	=> getenv('DB_HOST') ?: '127.0.0.1',
+    'hostname'	=> getenv('DB_HOST') ?: 'localhost',
     'port'		=> getenv('DB_PORT') ?: '3306',
     'username'	=> getenv('DB_USERNAME') ?: 'root',
-    'password'	=> getenv('DB_PASSWORD') ?: 'mydb',
-    'database'	=> getenv('DB_NAME') ?: '',
+    'password'	=> getenv('DB_PASSWORD') ?: '',
+    'database'	=> getenv('DB_NAME') ?: 'mydb',
     'charset'	=> '',
     'dbprefix'	=> '',
     // Optional for SQLite
