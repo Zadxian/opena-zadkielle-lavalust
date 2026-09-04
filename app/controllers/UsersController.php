@@ -11,7 +11,7 @@ class UsersController extends Controller
 
     public function index()
     {
-        $data['users'] = $this->UsersModel->get_all_users();
+        $data['users'] = $this->UsersModel->all();
         $this->call->view('users', $data);
     }
 }
