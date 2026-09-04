@@ -107,5 +107,5 @@ $autoload['models'] = array();
 | config files.  Otherwise, leave it blank.
 |
 */
-$autoload['configs'] = array('middleware');
+$autoload['configs'] = array('');
 ?>
