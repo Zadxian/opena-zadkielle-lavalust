@@ -6,11 +6,13 @@ class UsersController extends Controller
     public function __construct()
     {
         parent::__construct();
-        $this->call->model('UsersModel');
+        
     }
 
     public function index()
     {
+        $this->call->database();
+        $this->call->model('UsersModel');
         $data['users'] = $this->UsersModel->all();
         $this->call->view('users', $data);
     }
