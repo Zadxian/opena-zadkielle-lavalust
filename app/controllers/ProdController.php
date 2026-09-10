@@ -15,9 +15,9 @@ class ProdController extends Controller {
     public function index()
 {
     $this->call->database();
-    $this->call->model('ProdModel');
-    $data['products'] = $this->ProdModel->getAll();
-    $this->call->view('ProdManage', $data);
+        $this->call->model('ProdModel');
+        $data['products'] = $this->ProdModel->all();
+        $this->call->view('ProdManage', $data);
 }
 
 public function edit($id)

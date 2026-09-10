@@ -16,4 +16,7 @@ class ProdModel extends Model {
     {
         parent::__construct();
     }
+
+
+    
 }
