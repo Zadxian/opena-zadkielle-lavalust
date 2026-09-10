@@ -7,14 +7,14 @@
 </head>
 <body>
     <h1>Welcome to ProdManage View</h1>
-     <?php if (!empty($users)): ?>
-                <?php foreach ($users as $user): ?>
+     <?php if (!empty($products)): ?>
+                <?php foreach ($products as $product): ?>
                     <tr>
-                        <td><?= html_escape($user['id'] ?? ''); ?></td>
-                        <td><?= html_escape($user['product_name'] ?? ''); ?></td>
-                        <td><?= html_escape($user['description'] ?? ''); ?></td>
-                        <td><?= html_escape($user['price'] ?? ''); ?></td>
-                        <td><?= html_escape($user['quantity'] ?? ''); ?></td>
+                        <td><?= html_escape($product['id'] ?? ''); ?></td>
+                        <td><?= html_escape($product['product_name'] ?? ''); ?></td>
+                        <td><?= html_escape($product['description'] ?? ''); ?></td>
+                        <td><?= html_escape($product['price'] ?? ''); ?></td>
+                        <td><?= html_escape($product['quantity'] ?? ''); ?></td>
                     </tr>
                 <?php endforeach; ?>
             <?php else: ?>
