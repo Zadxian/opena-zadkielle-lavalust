@@ -24,7 +24,7 @@ public function edit($id)
 {
     $this->call->database();
     $this->call->model('ProdModel');
-    $data['products'] = $this->ProdModel->getAll();
+    $data['products'] = $this->ProdModel->all();
     $data['edit_product'] = $this->ProdModel->getById($id);
 
     if ($this->io->method() == 'post') {
