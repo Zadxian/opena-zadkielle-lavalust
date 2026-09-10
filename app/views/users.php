@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>the user bs</title>
+    <title>the users</title>
     <style>
         * {
             margin: 0;
@@ -89,11 +89,10 @@
 <body>
 
 <div class="container">
-    <h2>Registered Users</h2>
+    <h2>Users in the table</h2>
 
     <table>
         <thead>
-            <tr>
                 <th>ID</th>
                 <th>First Name</th>
                 <th>Last Name</th>
