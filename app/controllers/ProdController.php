@@ -37,7 +37,7 @@ class ProdController extends Controller {
        public function logout()
     {
         $this->session->unset_userdata(['name', 'logged_in']);
-        redirect('/login');
+        redirect('auth/login');
     }
 //----------------------------------------
 
