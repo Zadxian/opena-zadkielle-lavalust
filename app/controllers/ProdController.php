@@ -28,6 +28,7 @@ class ProdController extends Controller {
         $this->session->unset_userdata(['name', 'logged_in']);
         redirect('auth/login');
     }
+//----------------------------------------
 
        public function index()
     {
@@ -39,7 +40,7 @@ class ProdController extends Controller {
     public function create()
     {
         if ($this->io->method() == 'post') {
-            $this->ProdModel->createProduct([
+            $this->ProdModel->createProd([
                 'product_name' => $this->io->post('product_name'),
                 'description'  => $this->io->post('description'),
                 'price'        => $this->io->post('price'),
@@ -52,10 +53,10 @@ class ProdController extends Controller {
     public function edit($id)
     {
         $data['products'] = $this->ProdModel->All();
-        $data['edit_product'] = $this->ProdModel->getProductById($id);
+        $data['edit_product'] = $this->ProdModel->getById($id);
 
         if ($this->io->method() == 'post') {
-            $this->ProdModel->updateProduct($id, [
+            $this->ProdModel->updateProd($id, [
                 'product_name' => $this->io->post('product_name'),
                 'description'  => $this->io->post('description'),
                 'price'        => $this->io->post('price'),
@@ -69,7 +70,7 @@ class ProdController extends Controller {
 
     public function delete($id)
     {
-        $this->ProdModel->deleteProduct($id);
+        $this->ProdModel->deleteProd($id);
         redirect('products');
     }
 }
