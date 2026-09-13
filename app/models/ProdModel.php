@@ -25,14 +25,14 @@ class ProdModel extends Model {
     {
         return $this->db->table('products')
                         ->order_by('created_at', 'DESC')
-                        ->result();
+                        ->result_array();
     }
 
     public function getById($id)
     {
         return $this->db->table('products')
                         ->where('id', $id)
-                        ->row();
+                        ->result_array();
     }
 
     public function createProd($data)

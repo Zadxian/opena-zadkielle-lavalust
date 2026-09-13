@@ -7,6 +7,7 @@
 </head>
 <body>
  <h1>Products</h1>
+ <?php $edit_product = $edit_product ?? null; ?>
 <a href="<?= site_url('auth/logout') ?>">Logout</a>
 
 <h2><?= $edit_product ? 'Edit Product' : 'Add Product' ?></h2>
@@ -39,10 +40,10 @@
                         <td><?= html_escape($p['price'] ?? ''); ?></td>
                         <td><?= html_escape($p['quantity'] ?? ''); ?></td>
     <td>
-      <a href="<?= site_url('products/edit/'.$p->id) ?>">
+      <a href="<?= site_url('products/edit/'.$p['id']) ?>">
         <button type="button">Edit</button>
       </a>
-      <a href="<?= site_url('products/delete/'.$p->id) ?>"
+      <a href="<?= site_url('products/delete/'.$p['id']) ?>"
          onclick="return confirm('Delete this product?')">
         <button type="button">Delete</button>
       </a>
