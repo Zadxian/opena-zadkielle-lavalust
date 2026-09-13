@@ -51,7 +51,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 | My Configs:
 */
 $config['middlewares'] = array(
-    'auth' => load_class('ProdMiddleware', 'middlewares'),
+    'auth' => 'ProdMiddleware',
 );
 /*
 | -------------------------------------------------------------------
