@@ -16,13 +16,14 @@ class ProdMiddleware
     public function handle(Closure $next)
     {
         // TODO: Add your middleware logic here (authentication, authorization, etc.)
-             $lava = lava_instance();
+        $lava = lava_instance();
         $lava->call->library('session');
 
         if (!$lava->session->userdata('logged_in')) {
-            redirect('Login');
+            redirect('auth/login');
         }
-        return $next();
+
+        return $next();   
     }
 
 
