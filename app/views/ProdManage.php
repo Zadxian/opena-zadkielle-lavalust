@@ -208,7 +208,8 @@
 
 <div class="grid">
     <?php foreach ($products as $p): ?>
-      <div class="card-body">
+<div class="card">
+        <div class="card-body">
             <h3><?= html_escape($p['product_name'] ?? '') ?></h3>
             <p><?= html_escape($p['description'] ?? '') ?></p>
             <div class="card-meta">
@@ -223,6 +224,7 @@
                    onclick="return confirm('Delete this product?')">
                     <button type="button" class="delete-btn">Delete</button>
                 </a>
+            </div>
         </div>
     </div>
     <?php endforeach; ?>
