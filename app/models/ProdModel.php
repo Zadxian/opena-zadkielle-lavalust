@@ -24,15 +24,15 @@ class ProdModel extends Model {
     public function All()
     {
         return $this->db->table('products')
-                        ->order_by('created_at', 'DESC')
-                        ->result_array();
+                        ->order_by('created_at', 'ASC')
+                        ->get_all();
     }
 
     public function getById($id)
     {
         return $this->db->table('products')
                         ->where('id', $id)
-                        ->row_array();
+                        ->get_all();
     }
 
     public function createProd($data)

@@ -20,7 +20,7 @@ class ProdMiddleware
         $lava->call->library('session');
 
         if (!$lava->session->userdata('logged_in')) {
-            redirect('/login');
+            redirect('/');
         }
 
         return $next();   
