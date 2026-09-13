@@ -50,7 +50,9 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 | You can simply get configs using config_item() function anywhere
 | My Configs:
 */
-
+$config['middlewares'] = array(
+    'auth' => load_class('ProdMiddleware', 'middlewares'),
+);
 /*
 | -------------------------------------------------------------------
 | LavaLust Version
