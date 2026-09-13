@@ -47,7 +47,7 @@
         .form-card {
             max-width: 1000px;
             margin: 0 auto 32px;
-            background: #FFF3C4;
+            background: #f9f6ec;
             border: 1px solid #F0DFA0;
             border-radius: 16px;
             padding: 24px 28px;
