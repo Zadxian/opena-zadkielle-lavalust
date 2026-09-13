@@ -25,7 +25,7 @@ class ProdController extends Controller {
                 'name'      => $user->name,
                 'logged_in' => true
             ]);
-            redirect('products');
+            redirect('/products');
         } else {
             $data['error'] = 'Name not recognized';
             return $this->call->view('Login', $data);

@@ -47,9 +47,9 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 
 
 /*$router->get('/', 'UsersController::index');*/
-
-$router->match('/', 'ProdController::login', ['GET', 'POST']);
-$router->get('/logout', 'ProdController::logout');
+$router->get('/', 'ProdController::login');
+$router->match('auth/login', 'ProdController::login', ['GET', 'POST']);
+$router->get('auth/logout', 'ProdController::logout');
 
 $router->group(
     ['prefix' => '/products', 'middleware' => 'auth'],
