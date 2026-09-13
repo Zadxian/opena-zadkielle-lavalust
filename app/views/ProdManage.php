@@ -7,21 +7,22 @@
 </head>
 <body>
  <h1>Products</h1>
- <?php $edit_product = $edit_product ?? null; ?>
+ <?php $updateProd = $updateProd ?? null; ?>
+ <?php $products = $products ?? []; ?>
 <a href="<?= site_url('auth/logout') ?>">Logout</a>
 
-<h2><?= $edit_product ? 'Edit Product' : 'Add Product' ?></h2>
-<form method="post" action="<?= $edit_product ? site_url('products/edit/'.$edit_product->id) : site_url('products/create') ?>">
+<h2><?= $updateProd ? 'Edit Product' : 'Add Product' ?></h2>
+<form method="post" action="<?= $updateProd ? site_url('products/edit/'.$updateProd['id']) : site_url('products/create') ?>">
   <input type="text" name="product_name" placeholder="Product name"
-         value="<?= $edit_product ? html_escape($edit_product->product_name) : '' ?>" required>
-  <textarea name="description" placeholder="Description"><?= $edit_product ? html_escape($edit_product->description) : '' ?></textarea>
+         value="<?= $updateProd ? html_escape($updateProd['product_name']) : '' ?>" required>
+  <textarea name="description" placeholder="Description"><?= $updateProd ? html_escape($updateProd['description']) : '' ?></textarea>
   <input type="number" step="0.01" name="price" placeholder="Price"
-         value="<?= $edit_product ? html_escape($edit_product->price) : '' ?>" required>
+         value="<?= $updateProd ? html_escape($updateProd['price']) : '' ?>" required>
   <input type="number" name="quantity" placeholder="Quantity"
-         value="<?= $edit_product ? html_escape($edit_product->quantity) : '' ?>" required>
+         value="<?= $updateProd ? html_escape($updateProd['quantity']) : '' ?>" required>
 
-  <button type="submit"><?= $edit_product ? 'Update' : 'Create' ?></button>
-  <?php if ($edit_product): ?>
+  <button type="submit"><?= $updateProd ? 'Update' : 'Create' ?></button>
+  <?php if ($updateProd): ?>
     <a href="<?= site_url('products') ?>">Cancel</a>
   <?php endif; ?>
 </form>

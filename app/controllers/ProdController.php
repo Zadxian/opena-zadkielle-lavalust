@@ -19,8 +19,8 @@ class ProdController extends Controller {
     $this->call->database();
     $this->call->model('ProdModel');
     $data['products'] = $this->ProdModel->All();
-    $data['edit_product'] = null;
-    $this->call->view('ProdManage', $data);
+    $data['updateProd'] = null;
+    $this->call->view('Login', $data);
     }
 
        public function logout()
@@ -33,7 +33,7 @@ class ProdController extends Controller {
        public function index()
     {
         $data['products'] = $this->ProdModel->All();
-        $data['edit_product'] = null;
+        $data['updateProd'] = null;
         $this->call->view('ProdManage', $data);
     }
 
@@ -53,7 +53,7 @@ class ProdController extends Controller {
     public function edit($id)
     {
         $data['products'] = $this->ProdModel->All();
-        $data['edit_product'] = $this->ProdModel->getById($id);
+        $data['updateProd'] = $this->ProdModel->getById($id);
 
         if ($this->io->method() == 'post') {
             $this->ProdModel->updateProd($id, [
