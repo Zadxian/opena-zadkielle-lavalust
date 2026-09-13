@@ -9,9 +9,10 @@
  <h1>Products</h1>
  <?php $updateProd = $updateProd ?? null; ?>
  <?php $products = $products ?? []; ?>
-<a href="<?= site_url('/logout') ?>">Logout</a>
+<a href="<?= site_url('auth/logout') ?>">Logout</a>
 
 <h2><?= $updateProd ? 'Edit Product' : 'Add Product' ?></h2>
+
 <form method="post" action="<?= $updateProd ? site_url('products/edit/'.$updateProd['id']) : site_url('products/create') ?>">
   <input type="text" name="product_name" placeholder="Product name"
          value="<?= $updateProd ? html_escape($updateProd['product_name']) : '' ?>" required>
@@ -31,7 +32,7 @@
 
 <table border="1" cellpadding="6">
   <tr>
-    <th>Name</th><th>Description</th><th>Price</th><th>Qty</th><th>Actions</th>
+    <th>ID</th><th>Name</th><th>Description</th><th>Price</th><th>Qty</th><th>Actions</th>
   </tr>
   <?php foreach ($products as $p): ?>
   <tr>
