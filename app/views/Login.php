@@ -8,7 +8,7 @@
 <body>
    <h1>Login</h1>
 <?php if (!empty($error)): ?><p style="color:red"><?= html_escape($error) ?></p><?php endif; ?>
-<form method="post" action="<?= site_url('auth/login') ?>">
+<form method="post" action="<?= site_url('/products') ?>">
   <input type="text" name="name" placeholder="Your name" required>
   <button type="submit">Enter</button>
 </form>
