@@ -48,7 +48,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 
 /*$router->get('/', 'UsersController::index');*/
 
-$router->get('/login', 'ProdController::login', ['GET', 'POST']);
+$router->get('/', 'ProdController::login', ['GET', 'POST']);
 $router->get('/logout', 'ProdController::logout');
 
 $router->group(
