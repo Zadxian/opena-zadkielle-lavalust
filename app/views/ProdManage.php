@@ -110,7 +110,7 @@
         }
 
         .card {
-            background: #FFF8DC;
+            background: #f9f6ec;
             border: 1px solid #F0DFA0;
             border-radius: 16px;
             overflow: hidden;
