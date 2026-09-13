@@ -14,14 +14,25 @@ class ProdController extends Controller {
         $this->call->model('ProdModel');
     }
 
-    public function login()
-    {
-    $this->call->database();
-    $this->call->model('ProdModel');
-    $data['products'] = $this->ProdModel->All();
-    $data['updateProd'] = null;
-    $this->call->view('Login', $data);
+   public function login()
+{
+    if ($this->io->method() == 'post') {
+        $name = $this->io->post('name');
+        $user = $this->ProdModel->findUserByName($name);
+
+        if ($user) {
+            $this->session->set_userdata([
+                'name'      => $user->name,
+                'logged_in' => true
+            ]);
+            redirect('products');
+        } else {
+            $data['error'] = 'Name not recognized';
+            return $this->call->view('Login', $data);
+        }
     }
+    $this->call->view('Login');
+}
 
        public function logout()
     {
@@ -71,7 +82,7 @@ class ProdController extends Controller {
     public function delete($id)
     {
         $this->ProdModel->deleteProd($id);
-        redirect('products');
+        redirect('products/table');
     }
 }
 
