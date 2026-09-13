@@ -10,8 +10,8 @@
         body {
             margin: 0;
             font-family: 'Segoe UI', Arial, sans-serif;
-            background-image: url('/images/durr.png');
             background: #FFFBEA;
+            background-image: url('/images/durr.png');
             color: #4A4030;
             padding: 32px 24px 64px;
         }
@@ -118,21 +118,6 @@
             flex-direction: column;
         }
 
-        .card-image {
-            height: 140px;
-            background-color: #FCEEB0;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #B8A24A;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 0.3px;
-            border-bottom: 1px solid #F0DFA0;
-        }
-
         .card-body {
             padding: 16px;
             flex: 1;
@@ -223,12 +208,7 @@
 
 <div class="grid">
     <?php foreach ($products as $p): ?>
-    <div class="card">
-        <!-- PLACEHOLDER: swap this div's background-image (see .card-image CSS above)
-             or add style="background-image:url('...')" here per product -->
-        <div class="card-image">Add photo</div>
-
-        <div class="card-body">
+      <div class="card-body">
             <h3><?= html_escape($p['product_name'] ?? '') ?></h3>
             <p><?= html_escape($p['description'] ?? '') ?></p>
             <div class="card-meta">
@@ -243,7 +223,6 @@
                    onclick="return confirm('Delete this product?')">
                     <button type="button" class="delete-btn">Delete</button>
                 </a>
-            </div>
         </div>
     </div>
     <?php endforeach; ?>
