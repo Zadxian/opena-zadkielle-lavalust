@@ -9,7 +9,7 @@
  <h1>Products</h1>
  <?php $updateProd = $updateProd ?? null; ?>
  <?php $products = $products ?? []; ?>
-<a href="<?= site_url('auth/logout') ?>">Logout</a>
+<a href="<?= site_url('/logout') ?>">Logout</a>
 
 <h2><?= $updateProd ? 'Edit Product' : 'Add Product' ?></h2>
 <form method="post" action="<?= $updateProd ? site_url('products/edit/'.$updateProd['id']) : site_url('products/create') ?>">

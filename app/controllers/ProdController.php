@@ -20,13 +20,13 @@ class ProdController extends Controller {
     $this->call->model('ProdModel');
     $data['products'] = $this->ProdModel->All();
     $data['updateProd'] = null;
-    $this->call->view('ProdManage', $data);
+    $this->call->view('Login', $data);
     }
 
        public function logout()
     {
         $this->session->unset_userdata(['name', 'logged_in']);
-        redirect('auth/login');
+        redirect('/login');
     }
 //----------------------------------------
 
