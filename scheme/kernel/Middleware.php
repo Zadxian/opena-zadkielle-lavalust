@@ -53,7 +53,7 @@ class Middleware
     public function __construct()
     {
         $config = get_config();
-
+        var_dump($config); 
         if (!isset($config['middlewares'])) {
             throw new RuntimeException('Middleware config not found.');
         }
