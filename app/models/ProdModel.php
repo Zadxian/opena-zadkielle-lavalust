@@ -32,7 +32,7 @@ class ProdModel extends Model {
     {
         return $this->db->table('products')
                         ->where('id', $id)
-                        ->result_array();
+                        ->row_array();
     }
 
     public function createProd($data)

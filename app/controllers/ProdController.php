@@ -18,7 +18,7 @@ class ProdController extends Controller {
 {
     if ($this->io->method() == 'post') {
         $name = $this->io->post('name');
-        $user = $this->ProdModel->findUserByName($name);
+        $user = $this->ProdModel->finduser($name);
 
         if ($user) {
             $this->session->set_userdata([
