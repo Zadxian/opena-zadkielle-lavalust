@@ -54,7 +54,7 @@ $router->get('/auth/logout', 'ProdController::logout');
 $router->group(
     ['prefix' => '/products', 'middleware' => 'auth'],
     function ($router) {
-        $router->get('/',            'ProdController::index');
+        $router->get('/table',            'ProdController::index');
         $router->post('/create',     'ProdController::create');
         $router->match('/edit/{id}', 'ProdController::edit', ['GET', 'POST']);
         $router->get('/delete/{id}', 'ProdController::delete');

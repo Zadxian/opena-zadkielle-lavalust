@@ -20,7 +20,7 @@ class ProdController extends Controller {
     $this->call->model('ProdModel');
     $data['products'] = $this->ProdModel->All();
     $data['updateProd'] = null;
-    $this->call->view('Login', $data);
+    $this->call->view('ProdManage', $data);
     }
 
        public function logout()
